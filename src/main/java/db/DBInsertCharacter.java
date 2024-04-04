@@ -3,6 +3,9 @@ package db;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Establishes connection to database and performs an SQL INSERT query for a character
+ */
 public class DBInsertCharacter extends DBConnection{
     public DBInsertCharacter() throws SQLException {
 

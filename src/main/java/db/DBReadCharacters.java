@@ -7,6 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Establishes connection to database and performs an SQL SELECT query for all characters
+ * belonging to a user
+ */
 public class DBReadCharacters extends DBConnection{
     public DBReadCharacters() throws SQLException {
 
@@ -19,6 +23,7 @@ public class DBReadCharacters extends DBConnection{
                 );
         ResultSet resultSet = readStatement.executeQuery();
 
+        // Build Character objects with retrieved data and fill the ArrayList<Character>
         ArrayList<Character> selectedCharacters = new ArrayList<>();
         while (resultSet.next()) {
             int characterId = resultSet.getInt("Characterid");
