@@ -69,6 +69,7 @@ public class ViewAllCharacters extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    // Method to define actions for buttons
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == viewButton){
             // after clicking the view button, get the selected character
