@@ -4,6 +4,10 @@ package db;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Establishes connection to database and performs an SQL DELETE query for a comic
+ * Note that when a comic is deleted, all related characters are also deleted
+ */
 public class DBDeleteComic extends DBConnection{
     public DBDeleteComic() throws SQLException {
 

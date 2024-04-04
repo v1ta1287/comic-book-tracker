@@ -3,6 +3,9 @@ package db;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Establishes connection to database and performs an SQL DELETE query for a comic
+ */
 public class DBInsertComic extends DBConnection{
     public DBInsertComic() throws SQLException {
 

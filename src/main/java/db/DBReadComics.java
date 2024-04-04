@@ -1,12 +1,16 @@
 package db;
 
 import schema.Comic;
-import schema.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+/**
+ * Establishes connection to database and performs an SQL SELECT query for all comics
+ * belonging to a user
+ */
 
 public class DBReadComics extends DBConnection{
     public DBReadComics() throws SQLException {
@@ -19,6 +23,7 @@ public class DBReadComics extends DBConnection{
                         STR."SELECT * FROM Comics WHERE Userid = '\{userid}';");
         ResultSet resultSet = readStatement.executeQuery();
 
+        // Build Comic objects with retrieved data and fill the ArrayList<Comic>
         ArrayList<Comic> selectedComics = new ArrayList<>();
         while (resultSet.next()) {
             int comicId = resultSet.getInt("Comicid");
